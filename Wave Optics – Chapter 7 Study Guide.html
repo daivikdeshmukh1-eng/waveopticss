@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Wave Optics – Chapter 7 Study Guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{--bg:#f4f7fb;--ink:#12243b;--mute:#5b6b80;--card:#fff;--line:#d9e2ee;--c:#6d4bd6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1726;--ink:#e6edf7;--mute:#93a4bb;--card:#152238;--line:#27374f}}
+:root[data-theme="dark"]{--bg:#0d1726;--ink:#e6edf7;--mute:#93a4bb;--card:#152238;--line:#27374f}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Source Serif 4",Georgia,serif}
+h1,h2,h3,nav button,.tag{font-family:"Bricolage Grotesque",system-ui,sans-serif}
+header{padding:44px 20px 20px;max-width:900px;margin:auto}
+h1{font-size:clamp(34px,7vw,64px);line-height:1.02;margin:0 0 10px;font-weight:800;letter-spacing:-.02em}
+header p{color:var(--mute);margin:0;max-width:56ch}
+.spec{height:6px;border-radius:3px;margin-top:22px;background:linear-gradient(90deg,#6d4bd6,#3b5bdb,#0e8fb0,#1f9d6b,#d9a300,#e8590c,#c92a2a)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.tabs{max-width:900px;margin:auto;display:flex;gap:6px;overflow-x:auto;padding:10px 20px}
+nav button{flex:none;border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:99px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px}
+nav button i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+nav button[aria-selected=true]{background:var(--c);border-color:var(--c);color:#fff}
+nav button[aria-selected=true] i{background:#fff}
+button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+main{max-width:900px;margin:auto;padding:26px 20px 70px}
+section{display:none}section.on{display:block}
+h2{font-size:clamp(26px,5vw,38px);margin:0 0 4px;color:var(--c)}
+.sub{color:var(--mute);margin:0 0 22px}
+h3{font-size:19px;margin:28px 0 8px}
+p{margin:.5em 0;max-width:68ch}
+.f{border-left:5px solid var(--c);background:var(--card);border-radius:0 10px 10px 0;padding:12px 16px;margin:10px 0;font-size:20px;font-family:"Source Serif 4",serif}
+.f small{display:block;font-size:14px;color:var(--mute)}
+.def{background:color-mix(in srgb,var(--c) 11%,var(--card));border-radius:12px;padding:12px 16px;margin:10px 0}
+.def b{font-family:"Bricolage Grotesque",sans-serif;color:var(--c)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.box h4{margin:0 0 4px;font-family:"Bricolage Grotesque",sans-serif;font-size:16px}
+.tbl{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}th{background:color-mix(in srgb,var(--c) 14%,var(--card));font-family:"Bricolage Grotesque",sans-serif}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:12px 0;padding:0 16px}
+summary{cursor:pointer;padding:12px 0;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:var(--c)}
+details ol{padding-left:22px;margin:0 0 12px}details li{margin:4px 0}
+.lab{background:var(--card);border:1.5px solid var(--c);border-radius:14px;padding:16px;margin:22px 0}
+.lab h3{margin:0 0 8px;color:var(--c)}
+.row{display:grid;grid-template-columns:minmax(90px,150px) 1fr 80px;gap:10px;align-items:center;font-size:15px;font-family:"Bricolage Grotesque",sans-serif}
+.row input{width:100%;accent-color:var(--c)}
+canvas{width:100%;border-radius:8px;margin-top:10px;display:block;background:#000}
+.out{font-size:18px;margin-top:8px}.out b{color:var(--c)}
+.bar{height:16px;border-radius:8px;background:var(--line);overflow:hidden;margin-top:6px}.bar div{height:100%;background:var(--c);width:100%;transition:width .1s}
+.warn{border-left:5px solid #c92a2a;background:color-mix(in srgb,#c92a2a 10%,var(--card));padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<header><h1>Wave Optics</h1><p>Chapter 7, sorted into seven groups. Pick a colour above, read the definitions, open the derivations, then play with the live labs.</p><div class="spec"></div></header>
+<nav><div class="tabs" role="tablist" id="tabs"></div></nav>
+<main>
+
+<section data-t="Foundations" data-c="#6d4bd6" data-h="Ray optics, light as a wave">
+<h2>Foundations</h2><p class="sub">Sections 7.1, 7.2, 7.3</p>
+<div class="def"><b>Ray of light</b> — the path followed by light in a uniform, homogeneous medium. It travels in a straight line until it meets another medium, where it reflects or refracts.</div>
+<div class="grid">
+<div class="box"><h4>Reflection</h4>Incident ray, reflected ray and normal lie in one plane.<div class="f">i = r</div></div>
+<div class="box"><h4>Refraction (Snell)</h4>Incident ray, refracted ray and normal lie in one plane.<div class="f">n₁ sin i = n₂ sin r</div></div>
+</div>
+<h3>How the theory of light evolved</h3>
+<div class="tbl"><table><tr><th>Theory</th><th>Who</th><th>Idea</th><th>Verdict</th></tr>
+<tr><td>Corpuscular</td><td>Descartes (1636), Newton</td><td>Light = hard, elastic, massless particles. Elastic collisions explain reflection; medium attraction explains refraction.</td><td>Predicts <b>v<sub>denser</sub> &gt; v<sub>rarer</sub></b>, which experiment contradicts.</td></tr>
+<tr><td>Wave</td><td>Huygens (1668)</td><td>Light is a wave in a hypothetical medium, ether. Explains interference, diffraction, polarization, reflection, refraction.</td><td>Accepted. Gives v<sub>denser</sub> &lt; v<sub>rarer</sub>. Ether never found (Michelson–Morley); Einstein (1905) removed the need for it.</td></tr>
+<tr><td>Dual</td><td>Early 20th century</td><td>Light shows wave nature or particle nature depending on the situation. Particle of light = <b>photon</b>.</td><td>Modern view.</td></tr></table></div>
+<div class="def"><b>Ray optics (geometrical optics)</b> — the study of optical phenomena assuming light travels in straight lines as rays. It works because the wavelength is much smaller than everyday objects and surfaces.</div>
+<div class="def"><b>Wave optics</b> — the branch of optics that uses the wave nature of light to explain phenomena.</div>
+<div class="def"><b>Dual nature</b> — light exhibits both particle and wave nature under different situations.</div>
+<h3>Light as an electromagnetic wave (7.3)</h3>
+<p>Light is a transverse electromagnetic wave. E and B are perpendicular to each other and to the direction of travel. It needs no medium, so it crosses vacuum.</p>
+<div class="f">n = c / v<small>c = 3×10⁸ m/s. n(vacuum) = 1, n(air) ≈ 1.</small></div>
+<div class="def"><b>Refractive index</b> — ratio of the speed of light in vacuum to its speed in the medium.</div>
+<p><b>Spectrum, increasing wavelength:</b> γ-rays → X-rays → UV → Visible → IR → Microwaves → Radio. Visible light spans <b>400–700 nm</b>; violet is shortest, red longest. Because n depends on wavelength, white light splits into a spectrum or rainbow (except at normal incidence).</p>
+</section>
+
+<section data-t="Wavefronts" data-c="#3b5bdb" data-h="Sources, wavefronts, Huygens' principle">
+<h2>Wavefronts and Huygens</h2><p class="sub">Section 7.4</p>
+<div class="grid">
+<div class="box"><h4>Primary source</h4>Emits its own light: Sun, stars, flame, tube light, TV, firecrackers.</div>
+<div class="box"><h4>Secondary source</h4>Reflects or scatters light from elsewhere: Moon, planets, humans, plants. Most everyday sources are secondary.</div>
+</div>
+<div class="def"><b>Wavefront</b> — the locus of all points having the same phase at a given instant.</div>
+<div class="tbl"><table><tr><th>Source</th><th>Wavefront</th><th>Rays</th></tr>
+<tr><td>Point source</td><td>Spherical</td><td>Radiate out, ⟂ to the surface (diverging beam)</td></tr>
+<tr><td>Far from source</td><td>Plane</td><td>Parallel, ⟂ to the wavefront (parallel beam)</td></tr>
+<tr><td>Linear source</td><td>Cylindrical</td><td>⟂ to the surface</td></tr></table></div>
+<p>A <b>plane wave</b> is a wave with a plane wavefront. A ray is always perpendicular to the wavefront.</p>
+<div class="def"><b>Huygens' principle</b> — each point on a wavefront acts as a secondary source emitting wavelets in all directions at the speed of light in the medium. The new wavefront is the <b>envelope</b> of the forward wavelets.</div>
+<div class="f">r = vT<small>Radius of a wavelet after time T. Old wavefront → wavelets → envelope → new wavefront.</small></div>
+<div class="warn">Backward wavelets are simply declared ineffective. The textbook calls Huygens' theory <b>empirical</b>: it was accepted because it works.</div>
+</section>
+
+<section data-t="Reflection & Refraction" data-c="#0e8fb0" data-h="Derivations using Huygens' principle">
+<h2>Reflection and Refraction</h2><p class="sub">Sections 7.5, 7.6 · Both are long-answer derivations</p>
+<details open><summary>Derive the law of reflection</summary><ol>
+<li>Plane wavefront AB hits mirror MN. At t = 0, A touches the mirror; B has not.</li>
+<li>B reaches C after time T, so <b>BC = vT</b>.</li>
+<li>Points from A to C become secondary sources one after another.</li>
+<li>At time T the wavelet from A has radius <b>AE = vT</b>, so AE = BC. The envelope is the reflected wavefront EC.</li>
+<li>Triangles ABC and AEC are right-angled, share hypotenuse AC and have AE = BC, so they are congruent.</li>
+<li>∠ACE = ∠BAC = i. Since AE ⟂ CE and AP ⟂ AC, ∠PAE = ∠ACE = r.</li>
+<li>Therefore <b>i = r</b>. Incident ray, reflected ray and normal lie in one plane.</li></ol></details>
+<details open><summary>Derive Snell's law</summary><ol>
+<li>Wavefront AB meets boundary MN. Speeds are v₁ (medium 1) and v₂ (medium 2).</li>
+<li>B reaches C in time T: <b>BC = v₁T</b>. Meanwhile the wavelet from A travels <b>AE = v₂T</b> in medium 2.</li>
+<li>Envelope of wavelets = refracted wavefront CE.</li>
+<li>sin i = BC/AC = v₁T/AC and sin r = AE/AC = v₂T/AC.</li>
+<li>Divide: sin i / sin r = v₁/v₂.</li>
+<li>With v = c/n: v₁/v₂ = n₂/n₁.</li>
+<li>Hence <b>n₁ sin i = n₂ sin r</b>.</li></ol></details>
+<div class="grid">
+<div class="box"><h4>Rarer → denser</h4>v drops, n rises, i &gt; r. Ray bends <b>towards</b> the normal.</div>
+<div class="box"><h4>Denser → rarer</h4>Ray bends <b>away from</b> the normal.</div>
+</div>
+<h3>What changes when light enters a new medium?</h3>
+<div class="tbl"><table><tr><th>Speed v</th><th>Wavelength λ</th><th>Frequency ν</th></tr><tr><td>Changes</td><td>Changes</td><td><b>Unchanged</b></td></tr></table></div>
+<div class="f">λ₂ = λ₁ (n₁/n₂) = λ₁ (v₂/v₁)<small>From vacuum: λ = λ₀ / n. Higher n → shorter λ.</small></div>
+<p><b>Lateral inversion</b> — the apparent interchange of right and left in a mirror image. Image size equals object size.</p>
+<div class="lab"><h3>Lab: refraction calculator</h3>
+<div class="row"><label for="n1">n₁</label><input id="n1" type="range" min="1" max="2.5" step=".01" value="1"><span id="n1v"></span></div>
+<div class="row"><label for="n2">n₂</label><input id="n2" type="range" min="1" max="2.5" step=".01" value="1.5"><span id="n2v"></span></div>
+<div class="row"><label for="ai">Angle i</label><input id="ai" type="range" min="0" max="89" value="40"><span id="aiv"></span></div>
+<div class="out" id="so"></div><canvas id="cs" width="600" height="220"></canvas></div>
+</section>
+
+<section data-t="Polarization" data-c="#1f9d6b" data-h="Malus, Brewster, scattering">
+<h2>Polarization</h2><p class="sub">Section 7.7 · Proves light is a transverse wave</p>
+<div class="grid">
+<div class="box"><h4>Unpolarized</h4>E vibrates in all directions perpendicular to travel (Sun, bulb).</div>
+<div class="box"><h4>Plane polarized</h4>E restricted to one direction.</div>
+<div class="box"><h4>Polarizer</h4>Transmits E along one direction, blocks others. A polaroid is a plastic-sheet polarizer; the allowed direction is the <b>polarizing axis</b>.</div>
+</div>
+<p><b>Why transverse only?</b> A transverse wave has many possible oscillation directions to restrict. A longitudinal wave (sound) oscillates along travel, so there is nothing to restrict.</p>
+<p><b>Plane of vibration</b> contains E. <b>Plane of polarization</b> is perpendicular to it. Parallel axes (θ = 0°) pass all light; crossed axes (θ = 90°) pass none.</p>
+<h3>Malus' law</h3>
+<div class="f">First polarizer: I₁ = I₀ / 2<small>Unpolarized light loses half.</small></div>
+<div class="f">I = I₀ cos²θ<small>E₂ = E₁ cosθ, and I ∝ E². I₀ here is the intensity entering the analyzer.</small></div>
+<div class="lab"><h3>Lab: Malus' law</h3>
+<div class="row"><label for="th">Angle θ</label><input id="th" type="range" min="0" max="90" value="30"><span id="thv"></span></div>
+<div class="out" id="mo"></div><div class="bar"><div id="mb"></div></div></div>
+<h3>Brewster's law</h3>
+<div class="def"><b>Brewster angle θ<sub>B</sub></b> — the angle of incidence at which reflected light is completely plane polarized. Reflected and refracted rays are then perpendicular (θ<sub>B</sub> + θ<sub>r</sub> = 90°).</div>
+<details><summary>Derive tan θ<sub>B</sub> = n₂/n₁</summary><ol>
+<li>Snell: n₁ sin θ<sub>B</sub> = n₂ sin θ<sub>r</sub></li>
+<li>θ<sub>r</sub> = 90° − θ<sub>B</sub>, so sin θ<sub>r</sub> = cos θ<sub>B</sub></li>
+<li>n₁ sin θ<sub>B</sub> = n₂ cos θ<sub>B</sub></li>
+<li>Divide by n₁ cos θ<sub>B</sub>: <b>tan θ<sub>B</sub> = n₂/n₁</b></li></ol></details>
+<p>Example: air to n = 1.5 gives θ<sub>B</sub> = tan⁻¹(1.5) = 56.31°. Polaroid sunglasses cut glare from non-metallic surfaces.</p>
+<p><b>Scattering:</b> sunlight hitting air molecules and dust changes direction; blue scatters most, so the sky is blue. Scattered light is partially polarized, and at a <b>90° scattering angle</b> it is plane polarized.</p>
+</section>
+
+<section data-t="Interference" data-c="#b7860b" data-h="Superposition, coherence, YDSE, thin films">
+<h2>Interference</h2><p class="sub">Section 7.8 · Young first observed it for light in 1801</p>
+<div class="def"><b>Interference</b> — non-uniform intensity from the superposition of two or more light waves: bright (constructive, in phase) and dark (destructive, opposite phase) regions.</div>
+<div class="def"><b>Coherent sources</b> — same frequency and a constant phase difference. Two independent primary sources are not coherent, so we split one source into two.</div>
+<h3>Young's double slit (D ≫ d)</h3>
+<div class="grid">
+<div class="box"><h4>Path difference</h4><div class="f">Δl = yd / D</div></div>
+<div class="box"><h4>Bright fringe</h4><div class="f">Δl = nλ<br>yₙ = nλD / d</div></div>
+<div class="box"><h4>Dark fringe</h4><div class="f">Δl = (n − ½)λ<br>yₙ = (n − ½)λD / d</div></div>
+<div class="box"><h4>Fringe width</h4><div class="f">W = λD / d<small>Equal for bright and dark. Centre (n = 0) is bright.</small></div></div>
+</div>
+<div class="tbl"><table><tr><th></th><th>Path diff.</th><th>Phase diff.</th><th>Intensity</th></tr>
+<tr><td>Bright</td><td>nλ</td><td>2nπ</td><td>4I₀</td></tr><tr><td>Dark</td><td>(n − ½)λ</td><td>(2n − 1)π</td><td>0</td></tr></table></div>
+<div class="f">φ = 2πΔl / λ, E = 2E₀ cos(φ/2), I = 4I₀ cos²(φ/2)</div>
+<p>With unequal amplitudes, I<sub>max</sub> ∝ (E₁ + E₂)² and I<sub>min</sub> ∝ (E₁ − E₂)², so dark fringes are not fully dark.</p>
+<div class="lab"><h3>Lab: Young's double slit</h3>
+<div class="row"><label for="wl">Wavelength</label><input id="wl" type="range" min="400" max="700" value="550"><span id="wlv"></span></div>
+<div class="row"><label for="dd">Slit gap d</label><input id="dd" type="range" min="0.1" max="1" step=".05" value=".5"><span id="ddv"></span></div>
+<div class="row"><label for="DD">Distance D</label><input id="DD" type="range" min="0.5" max="3" step=".1" value="1.5"><span id="DDv"></span></div>
+<div class="out" id="yo"></div><canvas id="cy" width="800" height="90"></canvas></div>
+<h3>Conditions for a steady pattern — C M A D N P</h3>
+<div class="tbl"><table><tr><td><b>C</b>oherent sources</td><td><b>M</b>onochromatic light</td><td>Equal <b>A</b>mplitudes</td></tr><tr><td><b>D</b> ≫ d</td><td><b>N</b>arrow slits</td><td>Same <b>P</b>olarization</td></tr></table></div>
+<p>A constant non-zero phase difference between sources shifts the whole pattern but leaves fringe width unchanged.</p>
+<h3>Other ideas</h3>
+<div class="grid">
+<div class="box"><h4>Lloyd's mirror</h4>Direct ray plus ray reflected at grazing incidence, which seems to come from a virtual source. Real + virtual source are coherent.</div>
+<div class="box"><h4>Thin films</h4>Soap bubbles and oil films: light reflected from the top surface interferes with light reflected from the bottom. Reflection from a denser boundary adds phase π (path λ/2).</div>
+<div class="box"><h4>Optical path</h4><div class="f">OPL = n·d</div>Extra optical path over vacuum: d(n − 1).</div>
+<div class="box"><h4>Transparent plate on one slit</h4><div class="f">Δ = (n − 1)t</div>The whole pattern shifts; fringe width stays the same.</div>
+</div>
+</section>
+
+<section data-t="Diffraction" data-c="#e8590c" data-h="Single slit, Fresnel vs Fraunhofer">
+<h2>Diffraction</h2><p class="sub">Section 7.9</p>
+<div class="def"><b>Diffraction</b> — light spreads into the region where ray optics predicts a shadow. It is noticeable when the slit or obstacle size is about λ. It is interference of <i>many</i> waves from one wavefront.</div>
+<div class="tbl"><table><tr><th>Fraunhofer (Far)</th><th>Fresnel (Near)</th></tr>
+<tr><td>Very large distances; plane incident wavefront; lenses used</td><td>Smaller distances; cylindrical or spherical wavefront; no lens needed</td></tr></table></div>
+<h3>Single slit of width a (D ≫ a)</h3>
+<ul><li>Centre P₀: all paths equal, so a central bright maximum.</li><li>Extreme-ray path difference is a sinθ. For the first minimum, halves of the slit cancel in pairs (λ/2 apart).</li></ul>
+<div class="grid">
+<div class="box"><h4>nth minimum</h4><div class="f">a sinθₙ = nλ<br>yₙ = nλD / a</div></div>
+<div class="box"><h4>Secondary maxima</h4><div class="f">a sinθ ≈ (n + ½)λ</div>Roughly midway between minima.</div>
+<div class="box"><h4>Fringe width</h4><div class="f">W = λD / a</div></div>
+<div class="box"><h4>Central maximum</h4><div class="f">W_c = 2λD / a = 2W</div>Twice as wide and the brightest.</div>
+</div>
+<h3>Interference vs diffraction</h3>
+<div class="tbl"><table><tr><th></th><th>YDSE</th><th>Single slit</th></tr>
+<tr><td>Waves</td><td>Two coherent</td><td>Many, from one slit</td></tr>
+<tr><td>Width</td><td>λD/d (d = slit separation)</td><td>λD/a (a = slit width)</td></tr>
+<tr><td>Central fringe</td><td>Same width as others</td><td>Twice as wide</td></tr>
+<tr><td>Brightness</td><td>Nearly equal</td><td>Centre brightest, others weaker</td></tr></table></div>
+</section>
+
+<section data-t="Exam Toolkit" data-c="#c92a2a" data-h="Definitions, formulas, mnemonics">
+<h2>Exam Toolkit</h2><p class="sub">Revise here the night before</p>
+<h3>Definitions to write word-perfect</h3>
+<div class="def"><b>Wavefront</b> — locus of all points having the same phase at a given instant.</div>
+<div class="def"><b>Huygens' principle</b> — each point on a wavefront is a secondary source of wavelets; the new wavefront is their forward envelope.</div>
+<div class="def"><b>Primary source</b> emits its own light; a <b>secondary source</b> reflects or scatters light from another source.</div>
+<div class="def"><b>Malus' law</b> — I = I₀cos²θ gives the intensity of linearly polarized light through a polarizer.</div>
+<div class="def"><b>Coherent sources</b> — same frequency, constant phase difference.</div>
+<h3>Formula sheet</h3>
+<div class="tbl"><table><tr><th>Topic</th><th>Formula</th></tr>
+<tr><td>Refractive index</td><td>n = c/v</td></tr><tr><td>Snell's law</td><td>n₁ sin i = n₂ sin r</td></tr>
+<tr><td>Wavelength in medium</td><td>λ = λ₀/n; λ₂ = λ₁n₁/n₂</td></tr>
+<tr><td>Wavelet radius</td><td>r = vT</td></tr>
+<tr><td>Malus</td><td>I = I₀cos²θ; first polarizer I₀/2</td></tr>
+<tr><td>Brewster</td><td>tanθ<sub>B</sub> = n₂/n₁</td></tr>
+<tr><td>YDSE</td><td>Δl = yd/D; W = λD/d; I = 4I₀cos²(φ/2)</td></tr>
+<tr><td>Plate on slit</td><td>(n − 1)t</td></tr>
+<tr><td>Single slit</td><td>a sinθ = nλ; W = λD/a; W_c = 2λD/a</td></tr></table></div>
+<h3>Memory hooks</h3>
+<div class="grid">
+<div class="box"><h4>Reflection proof</h4>Touch → wavelets → AE = BC → congruent triangles → i = r</div>
+<div class="box"><h4>Medium change</h4>v ✓, λ ✓, ν ✗</div>
+<div class="box"><h4>Diffraction</h4>Fraunhofer = Far, Fresnel = Near</div>
+<div class="box"><h4>Steady fringes</h4>C M A D N P</div>
+<div class="box"><h4>Slit symbols</h4>d = distance between slits; a = aperture width</div>
+<div class="box"><h4>Likely long answers</h4>Reflection and refraction derivations, Malus' law, Brewster's law, YDSE fringe width</div>
+</div>
+</section>
+</main>
+<script>
+const $=id=>document.getElementById(id),S=[...document.querySelectorAll('section')],T=$('tabs');
+S.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('role','tab');b.innerHTML='<i></i>'+s.dataset.t;b.style.setProperty('--c',s.dataset.c);b.onclick=()=>show(i);T.appendChild(b);s.style.setProperty('--c',s.dataset.c)});
+function show(i){S.forEach((s,j)=>{s.classList.toggle('on',i==j);T.children[j].setAttribute('aria-selected',i==j)});document.documentElement.style.setProperty('--c',S[i].dataset.c);T.children[i].scrollIntoView({inline:'center',block:'nearest'});scrollTo(0,0);try{localStorage.setItem('wo',i)}catch(e){}}
+let st=0;try{st=+localStorage.getItem('wo')||0}catch(e){}show(st);
+const R=d=>d*Math.PI/180;
+// refraction
+function ref(){const a=+n1.value,b=+n2.value,i=+ai.value;n1v.textContent=a.toFixed(2);n2v.textContent=b.toFixed(2);aiv.textContent=i+'°';
+const s=a*Math.sin(R(i))/b,c=cs.getContext('2d');c.clearRect(0,0,600,220);c.fillStyle='#0b1c30';c.fillRect(0,0,600,110);c.fillStyle='#1d5a80';c.fillRect(0,110,600,110);
+c.strokeStyle='#aaa';c.setLineDash([5,5]);c.beginPath();c.moveTo(300,10);c.lineTo(300,210);c.stroke();c.setLineDash([]);c.lineWidth=3;
+c.strokeStyle='#ffd43b';c.beginPath();c.moveTo(300-100*Math.sin(R(i)),110-100*Math.cos(R(i)));c.lineTo(300,110);
+let t;if(s>1){t='Total internal reflection: no refracted ray. Critical angle = '+(Math.asin(b/a)*180/Math.PI).toFixed(1)+'°';c.lineTo(300+100*Math.sin(R(i)),110-100*Math.cos(R(i)))}
+else{const r=Math.asin(s);c.lineTo(300+100*Math.sin(r),110+100*Math.cos(r));t='Refraction angle r = <b>'+(r*180/Math.PI).toFixed(1)+'°</b> — bends '+(r<R(i)?'towards':r>R(i)?'away from':'not at all from')+' the normal. Speed in medium 2 = '+(3/b).toFixed(2)+'×10⁸ m/s'}
+c.stroke();so.innerHTML=t+'<br>Brewster angle for this pair: <b>'+(Math.atan(b/a)*180/Math.PI).toFixed(2)+'°</b>'}
+[n1,n2,ai].forEach(e=>e.oninput=ref);ref();
+// malus
+function mal(){const t=+th.value,v=Math.cos(R(t))**2;thv.textContent=t+'°';mo.innerHTML='I = I₀cos²θ = <b>'+(v*100).toFixed(1)+'%</b> of I₀'+(t==0?' (maximum)':t==90?' (crossed: none passes)':'');mb.style.width=v*100+'%'}
+th.oninput=mal;mal();
+// ydse
+function rgb(w){let r=0,g=0,b=0;if(w<440){r=(440-w)/60;b=1}else if(w<490){g=(w-440)/50;b=1}else if(w<510){g=1;b=(510-w)/20}else if(w<580){r=(w-510)/70;g=1}else if(w<645){r=1;g=(645-w)/65}else r=1;return[r,g,b].map(x=>Math.round(255*x))}
+function yd(){const l=+wl.value,d=+dd.value,D=+DD.value;wlv.textContent=l+' nm';ddv.textContent=d+' mm';DDv.textContent=D+' m';
+const W=l*1e-9*D/(d*1e-3)*1e3;yo.innerHTML='Fringe width W = λD/d = <b>'+W.toFixed(2)+' mm</b> (screen shows ±10 mm)';
+const c=cy.getContext('2d'),[r,g,b]=rgb(l);for(let x=0;x<800;x++){const y=(x-400)/40,I=Math.cos(Math.PI*y/W)**2;c.fillStyle=`rgb(${r*I|0},${g*I|0},${b*I|0})`;c.fillRect(x,0,1,90)}}
+[wl,dd,DD].forEach(e=>e.oninput=yd);yd();
+</script></body></html>
